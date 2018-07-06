@@ -1,0 +1,14 @@
+sudo: required
+
+language: generic
+
+addons:
+  apt:
+    packages:
+    - shellcheck
+
+before_script:
+  - ./bin/build
+
+script:
+  - ./bin/test
