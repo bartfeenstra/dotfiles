@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -Eeuo pipefail
+
+cd "$(dirname "$0")/../.."
+
+. ./src/bash/file
+
+link_file "./installers/shell/.bash_logout" "$HOME/.bash_logout"
+link_file "./installers/shell/.bashrc" "$HOME/.bashrc"
+link_file "./installers/shell/.profile" "$HOME/.profile"
