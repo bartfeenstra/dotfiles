@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -Eeuo pipefail
+
+cd "$(dirname "$0")/.."
+
+dotfiles_root=./dotfiles
+find "$dotfiles_root" | while read -r file; do
+    if [ ! -f "$file" ]; then
+        continue
+    fi
+    echo "Linking $file..."
+    basename=$(basename "$file")
+    target="$HOME/$basename"
+    rm "$target"
+    ln -s "$(readlink -f "$dotfiles_root")/$basename" "$target"
+done

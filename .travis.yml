@@ -1,0 +1,11 @@
+sudo: required
+
+language: generic
+
+addons:
+  apt:
+    packages:
+    - shellcheck
+
+script:
+  - ./bin/test
