@@ -1,0 +1,12 @@
+[core]
+	excludesfile = ~/.gitignore
+	editor = vim
+
+[push]
+    default = simple
+
+[diff]
+    rename = true
+
+[include]
+    path = ~/.gitconfig-user
