@@ -4,10 +4,13 @@ set -Eeuo pipefail
 
 cd "$(dirname "$0")/.."
 
-find ./bin | while read -r file; do
-    if [ ! -f "$file" ]; then
-        continue
-    fi
-    echo "Linting $file..."
-    shellcheck -x "$file"
+directories='./bin ./src/bash ./installers/*/install'
+for directory in $directories; do
+    find "$directory" | while read -r file; do
+        if [ ! -f "$file" ]; then
+            continue
+        fi
+        echo "Linting $file..."
+        shellcheck -x "$file"
+    done
 done

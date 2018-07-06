@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+link_file() {
+    source=$(readlink -f "$1")
+    target=$2
+
+    if [ ! -f "$source" ]; then
+        echo "ERROR: $source is not a file."
+        return 1
+    fi
+
+    echo "Installing $source..."
+
+    # Leave existing links intact.
+    if [ -L "$target" ] && [ "$(readlink -f "$target")" = "$(readlink -f "$source")" ]; then
+    echo "Skipping $source, because $target already links to it."
+        return
+    fi
+
+    # Archive existing files.
+    if [ -f "$target" ] || [ -L "$target" ]; then
+        echo "Moving existing $target to $target.old."
+        mv "$target" "$target.old"
+    fi
+
+    # Link the file.
+    echo "Linking $source."
+    ln -s "$source" "$target"
+}
