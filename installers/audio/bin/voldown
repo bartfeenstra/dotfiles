@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+set -Eeuo pipefail
+
+amixer -D pulse sset Master 5%- &>/dev/null

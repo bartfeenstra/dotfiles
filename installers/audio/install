@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -Eeuo pipefail
+
+cd "$(dirname "$0")/../.."
+
+. ./src/bash/file
+
+for file in ./installers/audio/bin/*; do
+    link_file "$file" "$HOME/.local/bin/$(basename "$file")"
+done
