@@ -3,4 +3,13 @@
 #
 # JetBrains IDEs (PhpStorm, PyCharm, IntellJ, etc.)
 .idea
+# VSCode
+.vscode
 
+#
+# Programming languages.
+#
+# Python
+*.pyc
+# Rust
+*.rs.bk
