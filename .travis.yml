@@ -12,3 +12,6 @@ script:
   # Install twice to test for some form of idempotency.
   - ./bin/install
   - ./bin/install
+  # Install twice to test for some form of idempotency.
+  - for installer in ./installers/*; do ./bin/install "$(basename "$installer")"; done
+  - for installer in ./installers/*; do ./bin/install "$(basename "$installer")"; done
