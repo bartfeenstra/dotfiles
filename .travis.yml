@@ -9,3 +9,6 @@ addons:
 
 script:
   - ./bin/test
+  # Install twice to test for some form of idempotency.
+  - ./bin/install
+  - ./bin/install
