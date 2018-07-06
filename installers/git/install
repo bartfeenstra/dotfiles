@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -Eeuo pipefail
+
+cd "$(dirname "$0")/../.."
+
+. ./src/bash/file
+
+link_file "./installers/git/.gitconfig" "$HOME/.gitconfig"
+link_file "./installers/git/.gitignore" "$HOME/.gitignore"
+
+touch ~/.gitconfig.local
