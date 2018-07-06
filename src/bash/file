@@ -25,5 +25,6 @@ link_file() {
 
     # Link the file.
     echo "Linking $source."
+    mkdir -p "$(dirname "$target")"
     ln -s "$source" "$target"
 }
