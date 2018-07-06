@@ -15,3 +15,6 @@ find "$dotfiles_root" | while read -r file; do
     rm -f "$target"
     ln -s "$(readlink -f "$dotfiles_root")/$basename" "$target"
 done
+
+# .gitconfig
+touch ~/.gitconfig.local
