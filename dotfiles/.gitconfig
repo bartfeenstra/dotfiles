@@ -1,6 +1,6 @@
 [core]
-	excludesfile = ~/.gitignore
-	editor = vim
+    excludesfile = ~/.gitignore
+    editor = vim
 
 [push]
     default = simple
@@ -9,23 +9,24 @@
     rename = true
 
 [color]
-	ui = auto
+    ui = auto
 
 [color "branch"]
-	current = yellow bold reverse
-	local = yellow
-	remote = green
+    current = yellow bold reverse
+    local = yellow
+    remote = green
 
 [color "diff"]
-	meta = yellow bold
-	frag = magenta bold
-	old = red
-	new = green
+    meta = yellow bold
+    frag = magenta bold
+    old = red
+    new = green
 
 [color "status"]
-	added = yellow
-	changed = green
+    added = yellow
+    changed = green
     untracked = cyan
 
 [include]
+    # This file can be used for sensitive configuration, such as the user.* directives.
     path = ~/.gitconfig.local
