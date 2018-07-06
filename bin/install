@@ -4,7 +4,9 @@ set -Eeuo pipefail
 
 cd "$(dirname "$0")/.."
 
-for file in ./installers/*/install; do
+installers=${1:-'*'}
+
+for file in ./installers/$installers/install; do
     echo "Installing $(dirname "$file")..."
     $file
 done
